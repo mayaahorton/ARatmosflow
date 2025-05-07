@@ -1,4 +1,4 @@
-# Atmosflow
+# AR-Atmosflow
 Update to ARatmospy to add additional functionality with diurnal TEC variation, frozen flow drift, thin shell dynamics, additional layering and line of sight integration for radio astronomy. 
 
 # AR-atmospheres-py
