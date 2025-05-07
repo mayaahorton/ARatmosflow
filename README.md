@@ -1,3 +1,6 @@
+# Atmosflow
+Update to ARatmospy to add additional functionality with diurnal TEC variation, frozen flow drift, thin shell dynamics, additional layering and line of sight integration for radio astronomy. 
+
 # AR-atmospheres-py
 Python version of autoregressive atmosphere generator
 
@@ -15,7 +18,7 @@ of stacked phase screens with the power-scaling law supplied (Kolmogorov, von Ka
 Required inputs are exposure time (in seconds), system rate (in Hz), alpha magnitude (< 1), number of subapertures across the
 wavefront sensor (n) and resolution of the output phase screen (m, pixels / subaperture). The eventual datacube is (n * m) x 
 (n * m) x (exposure time * rate). For non-AO applications, (n, m) and (expsore time, rate) could just be combined into one
-variable. Simulations where memory is not constrained, but computation resources are sould use this to generate a phase screen
+variable. Simulations where memory is not constrained, but computation resources are, should use this to generate a phase screen
 cube beforehand. 
 
 _create_multilayer_phasecube_: AR phase screen generator for use in LSST sims by Jim Chiang 
