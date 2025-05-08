@@ -3,19 +3,19 @@ Update to ARatmospy to add additional functionality with diurnal TEC variation, 
 
 The following parameters can be adjusted in ```tec_screen.py``` to control the properties of the TEC screen simulation.
 
-| Parameter           | Location                     | Description                                                                                   | Typical Values             |
-|---------------------|------------------------------|-----------------------------------------------------------------------------------------------|----------------------------|
-| `nx, ny`            | `__main__` / constructor     | Number of grid points in x and y                                                              | 256, 256                   |
-| `dx_ground, dy_ground` | `__main__` / constructor  | Ground‐projected grid spacing (m); scales per layer by `(R_EARTH + h)/R_EARTH`                  | 100.0                      |
-| `dt`                | `__main__` / constructor     | Time step between frames (s)                                                                   | 1–60                       |
-| `p`                 | `MultiLayerTECScreens`       | PSD slope exponent for Von Kármán spectrum; AR filter uses `k^{-p/2}`                           | 2.5–3.5                    |
-| `L0, l0`            | `MultiLayerTECScreens`       | Outer and inner scales (m) for spectral tapering                                               | L0=200 km, l0=1 km         |
-| `var`               | `TECScreens` / layer_params  | Variance of TEC fluctuations (TECU²) per layer                                                  | 1–10                       |
-| `v`                 | `TECScreens` / layer_params  | Drift velocity vector (m/s) for frozen‐flow; specify as magnitude & direction (deg)              | 100–400 m/s; 0°–360°        |
-| `tau`               | `TECScreens` / constructor    | AR(1) coherence time (s); controls temporal e‐folding                                           | 30–120                     |
-| `seed`              | `TECScreens` / constructor    | Random seed for reproducibility                                                                | integer or `None`          |
-| `layer_params`      | `MultiLayerTECScreens`       | List of `(var, speed, direction, height)` tuples defining each ionospheric layer               | \[(4,300,45,350e3),(1,100,-30,110e3)\] |
-| `frequency`         | `write_fits`                 | Reference frequency (Hz) written in WCS header 
+| Parameter           | Description                                                                                   | Typical Values             |
+|---------------------|-----------------------------------------------------------------------------------------------|----------------------------|
+| `nx, ny`            | Number of grid points in x and y                                                              | 256, 256                   |
+| `dx_ground, dy_ground` | Ground‐projected grid spacing (m); scales per layer by `(R_EARTH + h)/R_EARTH`                  | 100.0                      |
+| `dt`                | Time step between frames (s)                                                                   | 1–60                       |
+| `p`                 | PSD slope exponent for Von Kármán spectrum; AR filter uses `k^{-p/2}`                           | 2.5–3.5                    |
+| `L0, l0`            | Outer and inner scales (m) for spectral tapering                                               | L0=200 km, l0=1 km         |
+| `var`               | Variance of TEC fluctuations (TECU²) per layer                                                  | 1–10                       |
+| `v`                 | Drift velocity vector (m/s) for frozen‐flow; specify as magnitude & direction (deg)              | 100–400 m/s; 0°–360°        |
+| `tau`               | AR(1) coherence time (s); controls temporal e‐folding                                           | 30–120                     |
+| `seed`              | Random seed for reproducibility                                                                | integer or `None`          |
+| `layer_params`      | List of `(var, speed, direction, height)` tuples defining each ionospheric layer               | \[(4,300,45,350e3),(1,100,-30,110e3)\] |
+| `frequency`         | Reference frequency (Hz) written in WCS header 
 
 # AR-atmospheres-py
 Python version of autoregressive atmosphere generator
